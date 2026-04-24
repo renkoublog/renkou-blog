@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>泥から咲く蓮虹相談室</title>
+  <meta name="description" content="夫婦関係・親子関係のお悩み相談と、蓮虹の日常をつづるブログです。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500&family=Noto+Sans+JP:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --lotus-pink: #e8a0b0;
+      --lotus-light: #fdf6f8;
+      --lotus-green: #8aab8a;
+      --lotus-dark: #3d3535;
+      --lotus-gray: #7a7070;
+      --lotus-border: #f0dde3;
+      --max-width: 720px;
+    }
+
+    body {
+      font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif;
+      background: #fafaf9;
+      color: var(--lotus-dark);
+      line-height: 1.9;
+      font-size: 16px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: white;
+      border-bottom: 1px solid var(--lotus-border);
+      text-align: center;
+      padding: 2.5rem 1rem 2rem;
+    }
+
+    .site-symbol {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+      opacity: 0.7;
+    }
+
+    .site-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: clamp(1.4rem, 5vw, 2rem);
+      font-weight: 500;
+      color: var(--lotus-dark);
+      letter-spacing: 0.08em;
+    }
+
+    .site-tagline {
+      margin-top: 0.5rem;
+      font-size: 0.85rem;
+      color: var(--lotus-gray);
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: white;
+      border-bottom: 1px solid var(--lotus-border);
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      list-style: none;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      display: block;
+      padding: 0.85rem 1.5rem;
+      font-size: 0.85rem;
+      color: var(--lotus-gray);
+      text-decoration: none;
+      letter-spacing: 0.05em;
+      transition: color 0.2s;
+    }
+
+    nav a:hover { color: var(--lotus-pink); }
+
+    /* ── Main layout ── */
+    .container {
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem;
+    }
+
+    /* ── Hero banner ── */
+    .hero {
+      background: linear-gradient(135deg, #fdf0f4 0%, #f5faf5 100%);
+      border: 1px solid var(--lotus-border);
+      border-radius: 12px;
+      padding: 2.5rem 2rem;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+
+    .hero-lotus {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: block;
+    }
+
+    .hero h2 {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.2rem;
+      font-weight: 400;
+      color: var(--lotus-dark);
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      font-size: 0.9rem;
+      color: var(--lotus-gray);
+      max-width: 480px;
+      margin: 0 auto;
+      line-height: 1.9;
+    }
+
+    /* ── Section titles ── */
+    .section-title {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--lotus-dark);
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--lotus-border);
+      letter-spacing: 0.05em;
+    }
+
+    .section-title span { color: var(--lotus-pink); font-size: 1.1rem; }
+
+    /* ── Article cards ── */
+    .article-list { display: flex; flex-direction: column; gap: 1.25rem; margin-bottom: 3rem; }
+
+    .article-card {
+      background: white;
+      border: 1px solid var(--lotus-border);
+      border-radius: 10px;
+      padding: 1.5rem;
+      text-decoration: none;
+      color: inherit;
+      display: block;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .article-card:hover {
+      box-shadow: 0 4px 16px rgba(232,160,176,0.15);
+      transform: translateY(-1px);
+    }
+
+    .card-meta {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 0.6rem;
+    }
+
+    .card-category {
+      font-size: 0.72rem;
+      padding: 0.2rem 0.7rem;
+      border-radius: 20px;
+      font-weight: 400;
+      letter-spacing: 0.03em;
+    }
+
+    .cat-couple   { background: #fde8ee; color: #c4607a; }
+    .cat-parent   { background: #e8f5e8; color: #4a8050; }
+    .cat-diary    { background: #fef5e0; color: #a07820; }
+
+    .card-date { font-size: 0.78rem; color: #b0a0a0; }
+
+    .card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      color: var(--lotus-dark);
+      margin-bottom: 0.5rem;
+      line-height: 1.6;
+    }
+
+    .card-excerpt {
+      font-size: 0.88rem;
+      color: var(--lotus-gray);
+      line-height: 1.8;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    /* ── Categories ── */
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 480px) {
+      .category-grid { grid-template-columns: 1fr; }
+    }
+
+    .cat-card {
+      background: white;
+      border: 1px solid var(--lotus-border);
+      border-radius: 10px;
+      padding: 1.5rem 1rem;
+      text-align: center;
+      text-decoration: none;
+      color: inherit;
+      transition: box-shadow 0.2s;
+    }
+
+    .cat-card:hover { box-shadow: 0 4px 16px rgba(0,0,0,0.07); }
+
+    .cat-icon { font-size: 1.8rem; margin-bottom: 0.5rem; display: block; }
+
+    .cat-name {
+      font-size: 0.85rem;
+      color: var(--lotus-dark);
+      font-weight: 400;
+      display: block;
+    }
+
+    .cat-count { font-size: 0.75rem; color: #b0a0a0; margin-top: 0.25rem; display: block; }
+
+    /* ── About box ── */
+    .about-box {
+      background: linear-gradient(135deg, #fdf0f4 0%, #f5faf5 100%);
+      border: 1px solid var(--lotus-border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      display: flex;
+      gap: 1.5rem;
+      align-items: flex-start;
+    }
+
+    @media (max-width: 480px) {
+      .about-box { flex-direction: column; align-items: center; text-align: center; }
+    }
+
+    .about-avatar {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--lotus-pink), var(--lotus-green));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      flex-shrink: 0;
+    }
+
+    .about-name {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .about-text { font-size: 0.87rem; color: var(--lotus-gray); line-height: 1.9; }
+
+    /* ── Ad placeholder ── */
+    .ad-area {
+      background: #f5f5f5;
+      border: 1px dashed #d0c8c8;
+      border-radius: 8px;
+      padding: 1.5rem;
+      text-align: center;
+      color: #b0a8a8;
+      font-size: 0.8rem;
+      margin-bottom: 3rem;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: white;
+      border-top: 1px solid var(--lotus-border);
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.8rem;
+      color: #b0a0a0;
+    }
+
+    footer a { color: var(--lotus-gray); text-decoration: none; margin: 0 0.75rem; }
+    footer a:hover { color: var(--lotus-pink); }
+
+    .footer-links { margin-bottom: 0.75rem; }
+  </style>
+</head>
+<body>
+
+<!-- ── Header ── -->
+<header>
+  <div class="site-symbol">🪷</div>
+  <h1 class="site-title">泥から咲く蓮虹相談室</h1>
+  <p class="site-tagline">どんな場所でも、あなたは咲ける。</p>
+</header>
+
+<!-- ── Navigation ── -->
+<nav>
+  <ul>
+    <li><a href="index.html">ホーム</a></li>
+    <li><a href="#">夫婦関係</a></li>
+    <li><a href="#">親子関係</a></li>
+    <li><a href="#">蓮虹の日記</a></li>
+    <li><a href="#">お問い合わせ</a></li>
+  </ul>
+</nav>
+
+<!-- ── Main ── -->
+<main class="container">
+
+  <!-- Hero -->
+  <div class="hero">
+    <span class="hero-lotus">🪷</span>
+    <h2>泥のなかにいても、蓮は咲く。</h2>
+    <p>夫婦のこと、親子のこと、うまくいかなくて当たり前。<br>
+    ここでは、そんなリアルな悩みを一緒に考えていきます。<br>
+    あなたひとりじゃないよ、と伝えたくて。</p>
+  </div>
+
+  <!-- Ad area (Google AdSense用) -->
+  <div class="ad-area">
+    広告スペース（Google AdSense）
+  </div>
+
+  <!-- Latest articles -->
+  <h2 class="section-title"><span>✦</span> 新着記事</h2>
+  <div class="article-list">
+
+    <a class="article-card" href="#">
+      <div class="card-meta">
+        <span class="card-category cat-couple">夫婦関係</span>
+        <span class="card-date">2026年4月24日</span>
+      </div>
+      <div class="card-title">「話を聞いてくれない」夫にどう伝えればいい？</div>
+      <div class="card-excerpt">何度言っても伝わらない、そんな気持ちを抱えていませんか。実は「聞いてくれない」ではなく「伝わっていない」だけかもしれません。</div>
+    </a>
+
+    <a class="article-card" href="#">
+      <div class="card-meta">
+        <span class="card-category cat-parent">親子関係</span>
+        <span class="card-date">2026年4月20日</span>
+      </div>
+      <div class="card-title">子どもに怒ってしまった夜、自分を責めないでほしい</div>
+      <div class="card-excerpt">感情的になってしまうのは、あなたが悪い親だからじゃない。それだけ必死に向き合っているということ。</div>
+    </a>
+
+    <a class="article-card" href="#">
+      <div class="card-meta">
+        <span class="card-category cat-diary">蓮虹の日記</span>
+        <span class="card-date">2026年4月15日</span>
+      </div>
+      <div class="card-title">私が相談室を始めたわけ——泥のなかにいた頃の話</div>
+      <div class="card-excerpt">じつは私自身も、夫婦関係でどん底を経験しています。だからこそ、同じ場所にいる人の気持ちがわかる気がする。</div>
+    </a>
+
+  </div>
+
+  <!-- Categories -->
+  <h2 class="section-title"><span>✦</span> カテゴリ</h2>
+  <div class="category-grid">
+    <a class="cat-card" href="#">
+      <span class="cat-icon">💑</span>
+      <span class="cat-name">夫婦関係</span>
+      <span class="cat-count">記事一覧へ →</span>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">👨‍👩‍👧</span>
+      <span class="cat-name">親子関係</span>
+      <span class="cat-count">記事一覧へ →</span>
+    </a>
+    <a class="cat-card" href="#">
+      <span class="cat-icon">🌸</span>
+      <span class="cat-name">蓮虹の日記</span>
+      <span class="cat-count">記事一覧へ →</span>
+    </a>
+  </div>
+
+  <!-- About -->
+  <h2 class="section-title"><span>✦</span> このブログについて</h2>
+  <div class="about-box">
+    <div class="about-avatar">🪷</div>
+    <div>
+      <div class="about-name">蓮虹（れんこう）</div>
+      <p class="about-text">
+        夫婦関係・親子関係のお悩みを中心に綴るブログです。<br>
+        相談室として、あなたの「誰にも言えない」気持ちに寄り添いたいと思っています。<br>
+        「泥から咲く蓮」のように、どんな状況からでも前に進めることを信じて。
+      </p>
+    </div>
+  </div>
+
+</main>
+
+<!-- ── Footer ── -->
+<footer>
+  <div class="footer-links">
+    <a href="#">プライバシーポリシー</a>
+    <a href="#">お問い合わせ</a>
+    <a href="#">運営者情報</a>
+  </div>
+  <div>© 2026 泥から咲く蓮虹相談室</div>
+</footer>
+
+</body>
+</html>
